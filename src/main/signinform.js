@@ -32,6 +32,7 @@ function SigninForm() {
             })
             .then(res=>{
                 if(res.data==="exist"){
+                    alert("Signing In")
                     history("/home",{state:{id:email}})
                 }
                 else if(res.data==="notexist"){
