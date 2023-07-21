@@ -80,7 +80,7 @@ function SigninForm() {
 
               <MDBBtn className="mb-4 w-100"onClick={submit}>Sign in</MDBBtn>
               <div>
-                <p className="mb-0">Don't have an account? <a  href="/signup" class="text-black-50 fw-bold">Sign Up</a></p>
+                <p className="mb-0">Don't have an account? <NavLink class="text-black-50 fw-bold" to="/signup">Sign up</NavLink></p>
               </div>
             </MDBCardBody>
 
