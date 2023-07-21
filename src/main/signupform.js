@@ -137,7 +137,7 @@ function Signupform() {
             <MDBBtn className='mb-4' size='lg' onClick={submit}>Submit</MDBBtn>
             </div>
             <div>
-                <p className="mb-0">Already Have an Account? <a href="/" class="text-black-50 fw-bold">SignIn</a></p>
+                <p className="mb-0">Already Have an Account? <a href="/" class="text-blue-50 fw-bold">SignIn</a></p>
 
               </div>
           </MDBCardBody>
