@@ -47,7 +47,7 @@ function Signupform() {
       handle(e);
       try{
 
-          await axios.post("https://ecommerce-web-rqhz.onrender.com/signup",{
+          await axios.post("https://ecommerce-backend-vd4h.onrender.com/signup",{
               email,password,selectedOptions,phone,fullName,country
           })
           .then(res=>{
