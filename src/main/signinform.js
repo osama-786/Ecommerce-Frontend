@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { motion } from 'framer-motion';
 import axios from "axios"
+import Swal from 'sweetalert2'
 import { useNavigate} from "react-router-dom"
 import { NavLink } from 'react-router-dom'
 import {
@@ -32,15 +33,27 @@ function SigninForm() {
             })
             .then(res=>{
                 if(res.data==="exist"){
-                    alert("Signing In")
+                   Swal.fire(
+                    'Good job!',
+                    'Signing In',
+                    'success',
                     history("/home",{state:{id:email}})
+                  )
                 }
                 else if(res.data==="notexist"){
-                    alert("User have not sign up")
+                   Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'User Have not Sign Up',
+                  })
                 }
             })
             .catch(e=>{
-                alert("wrong details")
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Wrong Detail',
+              })
                 console.log(e);
             })
 
