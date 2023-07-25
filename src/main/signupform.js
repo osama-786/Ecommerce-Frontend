@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import Select from "react-select";
 import axios from "axios"
+import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom"
 import {
   MDBBtn,
@@ -52,15 +53,27 @@ function Signupform() {
           })
           .then(res=>{
               if(res.data==="exist"){
-                  alert("User already exists")
+                  Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'User Already Exist',
+                })
               }
               else if(res.data==="notexist"){
-                alert("Sign up Complete")
+                Swal.fire(
+                  'Good job!',
+                  'Sign Up Complete',
+                  'success',
                   history("/")
+                )
               }
           })
           .catch(e=>{
-              alert("wrong details")
+               Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Worng Detail',
+            })
               console.log(e);
           })
       }
